@@ -27,7 +27,7 @@ public class InternetInstalation extends InternetService{
     public InternetInstalation() {
     }
 
-    public InternetInstalation(Long installation_id, String name, String description, String type, String onumodel, String extrarouter, String onumac, Long instalationCost, Long extrafiber, DateFormat instalationDate, Long subtotal, Long total, boolean instalationState) {
+    public InternetInstalation(Long installation_id, String name, String description, String type, String onumodel, String extrarouter, String onumac, Long instalationCost, Long extrafiber, DateFormat instalationDate, Long subtotal, Long total) {
         this.installation_id = installation_id;
         this.name = name;
         this.description = description;
@@ -40,7 +40,6 @@ public class InternetInstalation extends InternetService{
         this.instalationDate = instalationDate;
         this.subtotal = subtotal;
         this.total = total;
-        this.instalationState = instalationState;
     }
 
     @Override

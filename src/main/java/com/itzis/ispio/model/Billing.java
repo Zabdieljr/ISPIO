@@ -24,13 +24,13 @@ public class Billing extends Account {
     private Long total;
     boolean billingState= true;
     private DateFormat billingDate;
-    private Set<Billing> billings = new HashSet<>();
+    final private Set<Billing> billings = new HashSet<>();
 
     public Billing(Long account_id, String name, String description, String type, Long balance, boolean accountState, DateFormat accountDate, Set<Account> accounts) {
         super(account_id, name, description, type, balance, accountState, accountDate, accounts);
     }
 
-    public Billing(Long account_id, String name, String description, String type, Long balance, boolean accountState, DateFormat accountDate, Set<Account> accounts, Long billing_id, String name1, String description1, String type1, Long balance1, Long ammount, Long discount, Long interest, Long tax, Long quantity, Long total, boolean billingState, DateFormat billingDate, Set<Billing> billings) {
+    public Billing(Long account_id, String name, String description, String type, Long balance, boolean accountState, DateFormat accountDate, Set<Account> accounts, Long billing_id, String name1, String description1, String type1, Long balance1, Long ammount, Long discount, Long interest, Long tax, Long quantity, Long total, DateFormat billingDate, Set<Billing> billings) {
         super(account_id, name, description, type, balance, accountState, accountDate, accounts);
         this.billing_id = billing_id;
         this.name = name1;
@@ -43,7 +43,6 @@ public class Billing extends Account {
         this.tax = tax;
         this.quantity = quantity;
         this.total = total;
-        this.billingState = billingState;
         this.billingDate = billingDate;
         this.billings = billings;
     }

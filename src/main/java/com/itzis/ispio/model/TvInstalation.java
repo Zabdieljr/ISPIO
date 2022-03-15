@@ -49,7 +49,6 @@ public class TvInstalation extends TvService {
         this.instalationDate = instalationDate;
         this.subtotal = subtotal;
         this.total = total;
-        this.installationState = installationState;
     }
 
     @Override

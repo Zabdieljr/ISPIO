@@ -26,16 +26,15 @@ public class Client extends Person {
 
     boolean thirPartyService= false;
     private String thirdProviderName;
-    private Set<Client> clients = new HashSet<>();
+    final private Set<Client> clients = new HashSet<>();
 
     public Client() {
     }
 
-    public Client(Long client_id, String clientType, String mainProviderName, boolean mainServiceProvider, String phone, String phone2, String email, String street, String sector, String city, String state, String estratus, boolean thirPartyService, String thirdProviderName, Set<Client> clients) {
+    public Client(Long client_id, String clientType, String mainProviderName, String phone, String phone2, String email, String street, String sector, String city, String state, String estratus, String thirdProviderName) {
         this.client_id = client_id;
         this.clientType = clientType;
         this.mainProviderName = mainProviderName;
-        this.mainServiceProvider = mainServiceProvider;
         this.phone = phone;
         this.phone2 = phone2;
         this.email = email;
@@ -44,9 +43,7 @@ public class Client extends Person {
         this.city = city;
         this.state = state;
         this.estratus = estratus;
-        this.thirPartyService = thirPartyService;
         this.thirdProviderName = thirdProviderName;
-        this.clients = clients;
     }
 
     @Override
@@ -200,7 +197,5 @@ public class Client extends Person {
         return clients;
     }
 
-    public void setClients(Set<Client> clients) {
-        this.clients = clients;
-    }
+
 }

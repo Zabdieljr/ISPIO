@@ -22,7 +22,7 @@ public class InternetServicePppoe extends InternetService{
     public InternetServicePppoe() {
     }
 
-    public InternetServicePppoe(Long pppoe_id, String name, String description, String type, String downSpeed, String upSpeed, String pppoeUser, String pppoePasword, String pppoeDescription, boolean pppoeState) {
+    public InternetServicePppoe(Long pppoe_id, String name, String description, String type, String downSpeed, String upSpeed, String pppoeUser, String pppoePasword, String pppoeDescription) {
         this.pppoe_id = pppoe_id;
         this.name = name;
         this.description = description;
@@ -32,7 +32,6 @@ public class InternetServicePppoe extends InternetService{
         this.pppoeUser = pppoeUser;
         this.pppoePasword = pppoePasword;
         this.pppoeDescription = pppoeDescription;
-        this.pppoeState = pppoeState;
     }
 
     @Override

@@ -20,14 +20,13 @@ public class TecSupport extends Service{
     public TecSupport() {
     }
 
-    public TecSupport(Long support_id, String name, String description, String tec_Id, String tecName, DateFormat supportDate, boolean supportState) {
+    public TecSupport(Long support_id, String name, String description, String tec_Id, String tecName, DateFormat supportDate) {
         this.support_id = support_id;
         this.name = name;
         this.description = description;
         this.tec_Id = tec_Id;
         this.tecName = tecName;
         this.supportDate = supportDate;
-        this.supportState = supportState;
     }
 
     @Override

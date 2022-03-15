@@ -15,7 +15,7 @@ public class Person implements Serializable {
     private Long person_id;
     private String firstName;
     private String secondName;
-    private String maidemName;
+    private String maidenName;
     private String lastName;
     private String legalID;
     private DateFormat dobirth;
@@ -25,11 +25,11 @@ public class Person implements Serializable {
     public Person() {
     }
 
-    public Person(Long person_id, String firstName, String secondName, String maidemName, String lastName, String legalID, DateFormat dobirth) {
+    public Person(Long person_id, String firstName, String secondName, String maidenName, String lastName, String legalID, DateFormat dobirth) {
         this.person_id = person_id;
         this.firstName = firstName;
         this.secondName = secondName;
-        this.maidemName = maidemName;
+        this.maidenName = maidenName;
         this.lastName = lastName;
         this.legalID = legalID;
         this.dobirth = dobirth;
@@ -54,7 +54,7 @@ public class Person implements Serializable {
                 "id=" + person_id +
                 ", firstName='" + firstName + '\'' +
                 ", secondName='" + secondName + '\'' +
-                ", maidemName='" + maidemName + '\'' +
+                ", maidemName='" + maidenName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", legalID='" + legalID + '\'' +
                 ", dobirth=" + dobirth +
@@ -85,12 +85,12 @@ public class Person implements Serializable {
         this.secondName = secondName;
     }
 
-    public String getMaidemName() {
-        return maidemName;
+    public String getMaidenName() {
+        return maidenName;
     }
 
-    public void setMaidemName(String maidemName) {
-        this.maidemName = maidemName;
+    public void setMaidenName(String maidenName) {
+        this.maidenName = maidenName;
     }
 
     public String getLastName() {

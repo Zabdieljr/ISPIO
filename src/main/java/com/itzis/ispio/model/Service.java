@@ -19,12 +19,12 @@ public class Service extends Person {
     private Long price;
     private DateFormat serviceDate;
     boolean accountState= true;
-    private Set<Service> services = new HashSet<>();
+    final private Set<Service> services = new HashSet<>();
 
     public Service() {
     }
 
-    public Service(Long service_id, String name, String description, String type, Long price, DateFormat serviceDate, boolean accountState, Set<Service> services) {
+    public Service(Long service_id, String name, String description, String type, Long price, DateFormat serviceDate, boolean accountState) {
         this.service_id = service_id;
         this.name = name;
         this.description = description;
@@ -32,7 +32,6 @@ public class Service extends Person {
         this.price = price;
         this.serviceDate = serviceDate;
         this.accountState = accountState;
-        this.services = services;
     }
 
     @Override
@@ -123,7 +122,4 @@ public class Service extends Person {
         return services;
     }
 
-    public void setServices(Set<Service> services) {
-        this.services = services;
-    }
 }

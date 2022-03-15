@@ -17,17 +17,16 @@ public class Account extends Person {
     private String description;
     private String type;
     private Long balance;
-    boolean accountState;
+    boolean accountState=true;
     private DateFormat accountDate;
     final private Set<Account> accounts = new HashSet<>();
 
-    public Account(Long account_id, String name, String description, String type, Long balance, boolean accountState, DateFormat accountDate, Set<Account> accounts) {
+    public Account(Long account_id, String name, String description, String type, Long balance, DateFormat accountDate, Set<Account> accounts) {
         this.account_id = account_id;
         this.name = name;
         this.description = description;
         this.type = type;
         this.balance = balance;
-        this.accountState = accountState;
         this.accountDate = accountDate;
     }
 

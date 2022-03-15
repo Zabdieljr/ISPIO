@@ -22,7 +22,7 @@ public class InternetService extends Service{
     public InternetService() {
     }
 
-    public InternetService(Long internetService_id, String name, String description, String type, String protocol, DateFormat serviceStartDate, Long price, boolean internetState) {
+    public InternetService(Long internetService_id, String name, String description, String type, String protocol, DateFormat serviceStartDate, Long price) {
         this.internetService_id = internetService_id;
         this.name = name;
         this.description = description;
@@ -30,7 +30,6 @@ public class InternetService extends Service{
         this.protocol = protocol;
         this.serviceStartDate = serviceStartDate;
         this.price = price;
-        this.internetState = internetState;
     }
 
     @Override

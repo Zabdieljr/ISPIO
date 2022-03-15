@@ -38,7 +38,6 @@ public class InternetServiceDude extends Service{
         this.napPort = napPort;
         this.onuGponPort = onuGponPort;
         this.pppoeDescription = pppoeDescription;
-        this.serviceState = serviceState;
     }
 
     @Override
@@ -70,7 +69,6 @@ public class InternetServiceDude extends Service{
                 ", napPort='" + napPort + '\'' +
                 ", onuGponPort='" + onuGponPort + '\'' +
                 ", pppoeDescription='" + pppoeDescription + '\'' +
-                ", serviceState=" + serviceState +
                 '}';
     }
 

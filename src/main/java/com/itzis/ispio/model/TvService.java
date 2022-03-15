@@ -20,7 +20,7 @@ public class TvService extends Service{
     public TvService() {
     }
 
-    public TvService(Long tvService_id, String name, String description, String type, String protocol, String channels, Long price, Long discount, Long tvCount, boolean tvState, DateFormat servicestartDate) {
+    public TvService(Long tvService_id, String name, String description, String type, String protocol, String channels, Long price, Long discount, Long tvCount, DateFormat servicestartDate) {
         this.tvService_id = tvService_id;
         this.name = name;
         this.description = description;
@@ -30,7 +30,6 @@ public class TvService extends Service{
         this.price = price;
         this.discount = discount;
         this.tvCount = tvCount;
-        this.tvState = tvState;
         this.servicestartDate = servicestartDate;
     }
 
