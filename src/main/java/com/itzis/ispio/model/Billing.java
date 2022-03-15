@@ -26,12 +26,12 @@ public class Billing extends Account {
     private DateFormat billingDate;
     final private Set<Billing> billings = new HashSet<>();
 
-    public Billing(Long account_id, String name, String description, String type, Long balance, boolean accountState, DateFormat accountDate, Set<Account> accounts) {
-        super(account_id, name, description, type, balance, accountState, accountDate, accounts);
+    public Billing(Long account_id, String name, String description, String type, Long balance, DateFormat accountDate, Set<Account> accounts) {
+        super(account_id, name, description, type, balance, accountDate, accounts);
     }
 
-    public Billing(Long account_id, String name, String description, String type, Long balance, boolean accountState, DateFormat accountDate, Set<Account> accounts, Long billing_id, String name1, String description1, String type1, Long balance1, Long ammount, Long discount, Long interest, Long tax, Long quantity, Long total, DateFormat billingDate, Set<Billing> billings) {
-        super(account_id, name, description, type, balance, accountState, accountDate, accounts);
+    public Billing(Long account_id, String name, String description, String type, Long balance, DateFormat accountDate, Set<Account> accounts, Long billing_id, String name1, String description1, String type1, Long balance1, Long ammount, Long discount, Long interest, Long tax, Long quantity, Long total, DateFormat billingDate, Set<Billing> billings) {
+        super(account_id, name, description, type, balance,accountDate, accounts);
         this.billing_id = billing_id;
         this.name = name1;
         this.description = description1;
@@ -44,7 +44,6 @@ public class Billing extends Account {
         this.quantity = quantity;
         this.total = total;
         this.billingDate = billingDate;
-        this.billings = billings;
     }
 
     @Override
@@ -197,7 +196,4 @@ public class Billing extends Account {
         return billings;
     }
 
-    public void setBillings(Set<Billing> billings) {
-        this.billings = billings;
-    }
 }

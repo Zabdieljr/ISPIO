@@ -14,8 +14,8 @@ public class InternetServiceDude extends Service{
     private String type;
     private String gateWayIp;
     private String clientStaticIp;
-    private String oltip;
-    private String oltgpon;
+    private String oltIp;
+    private String oltGpon;
     private String napIp;
     private String napPort;
     private String onuGponPort;
@@ -25,15 +25,15 @@ public class InternetServiceDude extends Service{
     public InternetServiceDude() {
     }
 
-    public InternetServiceDude(Long dude_id, String name, String description, String type, String gateWayIp, String clientStaticIp, String oltip, String oltgpon, String napIp, String napPort, String onuGponPort, String pppoeDescription, boolean serviceState) {
+    public InternetServiceDude(Long dude_id, String name, String description, String type, String gateWayIp, String clientStaticIp, String oltIp, String oltGpon, String napIp, String napPort, String onuGponPort, String pppoeDescription, boolean serviceState) {
         this.dude_id = dude_id;
         this.name = name;
         this.description = description;
         this.type = type;
         this.gateWayIp = gateWayIp;
         this.clientStaticIp = clientStaticIp;
-        this.oltip = oltip;
-        this.oltgpon = oltgpon;
+        this.oltIp = oltIp;
+        this.oltGpon = oltGpon;
         this.napIp = napIp;
         this.napPort = napPort;
         this.onuGponPort = onuGponPort;
@@ -63,8 +63,8 @@ public class InternetServiceDude extends Service{
                 ", type='" + type + '\'' +
                 ", gateWayIp='" + gateWayIp + '\'' +
                 ", clientStaticIp='" + clientStaticIp + '\'' +
-                ", oltip='" + oltip + '\'' +
-                ", oltgpon='" + oltgpon + '\'' +
+                ", oltip='" + oltIp + '\'' +
+                ", oltgpon='" + oltGpon + '\'' +
                 ", napIp='" + napIp + '\'' +
                 ", napPort='" + napPort + '\'' +
                 ", onuGponPort='" + onuGponPort + '\'' +
@@ -120,20 +120,20 @@ public class InternetServiceDude extends Service{
         this.clientStaticIp = clientStaticIp;
     }
 
-    public String getOltip() {
-        return oltip;
+    public String getOltIp() {
+        return oltIp;
     }
 
-    public void setOltip(String oltip) {
-        this.oltip = oltip;
+    public void setOltIp(String oltIp) {
+        this.oltIp = oltIp;
     }
 
-    public String getOltgpon() {
-        return oltgpon;
+    public String getOltGpon() {
+        return oltGpon;
     }
 
-    public void setOltgpon(String oltgpon) {
-        this.oltgpon = oltgpon;
+    public void setOltGpon(String oltGpon) {
+        this.oltGpon = oltGpon;
     }
 
     public String getNapIp() {

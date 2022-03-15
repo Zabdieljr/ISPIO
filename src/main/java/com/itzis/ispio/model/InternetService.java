@@ -15,7 +15,6 @@ public class InternetService extends Service{
     private String type;
     private String protocol;
     private DateFormat serviceStartDate;
-
     private Long price;
     boolean internetState= true;
 

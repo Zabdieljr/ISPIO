@@ -7,7 +7,6 @@ import java.text.DateFormat;
 import java.util.Objects;
 
 public class TvInstalation extends TvService {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long tvInstalation_id;

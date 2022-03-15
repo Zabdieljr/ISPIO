@@ -1,10 +1,14 @@
 package com.itzis.ispio.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.text.DateFormat;
 import java.util.Objects;
 
 public class TvService extends Service{
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long tvService_id;
     private String name;
     private String description;

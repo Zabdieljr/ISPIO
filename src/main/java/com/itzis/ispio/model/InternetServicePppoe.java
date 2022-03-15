@@ -15,14 +15,14 @@ public class InternetServicePppoe extends InternetService{
     private String downSpeed;
     private String upSpeed;
     private String pppoeUser;
-    private String pppoePasword;
+    private String pppoePassword;
     private String pppoeDescription;
     boolean pppoeState= true;
 
     public InternetServicePppoe() {
     }
 
-    public InternetServicePppoe(Long pppoe_id, String name, String description, String type, String downSpeed, String upSpeed, String pppoeUser, String pppoePasword, String pppoeDescription) {
+    public InternetServicePppoe(Long pppoe_id, String name, String description, String type, String downSpeed, String upSpeed, String pppoeUser, String pppoePassword, String pppoeDescription) {
         this.pppoe_id = pppoe_id;
         this.name = name;
         this.description = description;
@@ -30,7 +30,7 @@ public class InternetServicePppoe extends InternetService{
         this.downSpeed = downSpeed;
         this.upSpeed = upSpeed;
         this.pppoeUser = pppoeUser;
-        this.pppoePasword = pppoePasword;
+        this.pppoePassword = pppoePassword;
         this.pppoeDescription = pppoeDescription;
     }
 
@@ -58,7 +58,7 @@ public class InternetServicePppoe extends InternetService{
                 ", downSpeed='" + downSpeed + '\'' +
                 ", upSpeed='" + upSpeed + '\'' +
                 ", pppoeUser='" + pppoeUser + '\'' +
-                ", pppoePasword='" + pppoePasword + '\'' +
+                ", pppoePasword='" + pppoePassword + '\'' +
                 ", pppoeDescription='" + pppoeDescription + '\'' +
                 ", pppoeState=" + pppoeState +
                 '}';
@@ -126,12 +126,12 @@ public class InternetServicePppoe extends InternetService{
         this.pppoeUser = pppoeUser;
     }
 
-    public String getPppoePasword() {
-        return pppoePasword;
+    public String getPppoePassword() {
+        return pppoePassword;
     }
 
-    public void setPppoePasword(String pppoePasword) {
-        this.pppoePasword = pppoePasword;
+    public void setPppoePassword(String pppoePassword) {
+        this.pppoePassword = pppoePassword;
     }
 
     public String getPppoeDescription() {

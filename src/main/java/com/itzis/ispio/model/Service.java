@@ -9,7 +9,6 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Service extends Person {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long service_id;

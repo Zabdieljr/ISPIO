@@ -19,7 +19,6 @@ public class TecSupport extends Service{
 
     public TecSupport() {
     }
-
     public TecSupport(Long support_id, String name, String description, String tec_Id, String tecName, DateFormat supportDate) {
         this.support_id = support_id;
         this.name = name;

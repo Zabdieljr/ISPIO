@@ -8,7 +8,6 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Client extends Person {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long client_id;
@@ -196,6 +195,4 @@ public class Client extends Person {
     public Set<Client> getClients() {
         return clients;
     }
-
-
 }

@@ -7,7 +7,6 @@ import java.text.DateFormat;
 import java.util.Objects;
 
 public class InternetInstalation extends InternetService{
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long installation_id;

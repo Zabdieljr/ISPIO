@@ -24,7 +24,6 @@ public class Person implements Serializable {
 
     public Person() {
     }
-
     public Person(Long person_id, String firstName, String secondName, String maidenName, String lastName, String legalID, DateFormat dobirth) {
         this.person_id = person_id;
         this.firstName = firstName;
