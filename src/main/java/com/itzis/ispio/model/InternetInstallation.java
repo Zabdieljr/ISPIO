@@ -4,9 +4,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.text.DateFormat;
+import java.time.LocalDate;
 import java.util.Objects;
 
-public class InternetInstalation extends InternetService{
+public class InternetInstallation extends InternetService{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long installation_id;
@@ -16,17 +17,18 @@ public class InternetInstalation extends InternetService{
     private String onumodel;
     private String extrarouter;
     private String onumac;
-    private Long instalationCost;
+    private Long installationCost;
     private Long extrafiber;
-    private DateFormat instalationDate;
+    private LocalDate intInstCreated;
+    private LocalDate intInstExecuted;
     private Long subtotal;
     private Long total;
-    boolean instalationState= true;
+    boolean installationState = true;
 
-    public InternetInstalation() {
+    public InternetInstallation() {
     }
 
-    public InternetInstalation(Long installation_id, String name, String description, String type, String onumodel, String extrarouter, String onumac, Long instalationCost, Long extrafiber, DateFormat instalationDate, Long subtotal, Long total) {
+    public InternetInstallation(Long installation_id, String name, String description, String type, String onumodel, String extrarouter, String onumac, Long instalationCost, Long extrafiber, LocalDate intInstCreated,LocalDate intInstExecuted, Long subtotal, Long total) {
         this.installation_id = installation_id;
         this.name = name;
         this.description = description;
@@ -34,11 +36,12 @@ public class InternetInstalation extends InternetService{
         this.onumodel = onumodel;
         this.extrarouter = extrarouter;
         this.onumac = onumac;
-        this.instalationCost = instalationCost;
+        this.installationCost = instalationCost;
         this.extrafiber = extrafiber;
-        this.instalationDate = instalationDate;
         this.subtotal = subtotal;
         this.total = total;
+        this.intInstCreated = intInstCreated;
+        this.intInstExecuted = intInstExecuted;
     }
 
     @Override
@@ -46,7 +49,7 @@ public class InternetInstalation extends InternetService{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        InternetInstalation that = (InternetInstalation) o;
+        InternetInstallation that = (InternetInstallation) o;
         return Objects.equals(installation_id, that.installation_id);
     }
 
@@ -65,13 +68,30 @@ public class InternetInstalation extends InternetService{
                 ", onumodel='" + onumodel + '\'' +
                 ", extrarouter='" + extrarouter + '\'' +
                 ", onumac='" + onumac + '\'' +
-                ", instalationCost=" + instalationCost +
+                ", installationCost=" + installationCost +
                 ", extrafiber=" + extrafiber +
-                ", instalationDate=" + instalationDate +
+                ", installationCreated=" + intInstCreated +
+                ", installationexecuted=" + intInstExecuted +
                 ", subtotal=" + subtotal +
                 ", total=" + total +
-                ", instalationState=" + instalationState +
+                ", installationState=" + installationState +
                 '}';
+    }
+
+    public LocalDate getIntInstCreated() {
+        return intInstCreated;
+    }
+
+    public void setIntInstCreated(LocalDate intInstCreated) {
+        this.intInstCreated = intInstCreated;
+    }
+
+    public LocalDate getIntInstExecuted() {
+        return intInstExecuted;
+    }
+
+    public void setIntInstExecuted(LocalDate intInstExecuted) {
+        this.intInstExecuted = intInstExecuted;
     }
 
     public Long getInstallation_id() {
@@ -130,12 +150,12 @@ public class InternetInstalation extends InternetService{
         this.onumac = onumac;
     }
 
-    public Long getInstalationCost() {
-        return instalationCost;
+    public Long getInstallationCost() {
+        return installationCost;
     }
 
-    public void setInstalationCost(Long instalationCost) {
-        this.instalationCost = instalationCost;
+    public void setInstallationCost(Long installationCost) {
+        this.installationCost = installationCost;
     }
 
     public Long getExtrafiber() {
@@ -144,14 +164,6 @@ public class InternetInstalation extends InternetService{
 
     public void setExtrafiber(Long extrafiber) {
         this.extrafiber = extrafiber;
-    }
-
-    public DateFormat getInstalationDate() {
-        return instalationDate;
-    }
-
-    public void setInstalationDate(DateFormat instalationDate) {
-        this.instalationDate = instalationDate;
     }
 
     public Long getSubtotal() {
@@ -170,11 +182,11 @@ public class InternetInstalation extends InternetService{
         this.total = total;
     }
 
-    public boolean isInstalationState() {
-        return instalationState;
+    public boolean isInstallationState() {
+        return installationState;
     }
 
-    public void setInstalationState(boolean instalationState) {
-        this.instalationState = instalationState;
+    public void setInstallationState(boolean installationState) {
+        this.installationState = installationState;
     }
 }

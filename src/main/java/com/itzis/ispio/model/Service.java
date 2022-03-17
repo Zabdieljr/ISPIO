@@ -4,6 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.text.DateFormat;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -12,6 +13,11 @@ public class Service extends Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long service_id;
+    private ServiceType serviceType;
+    private Client client;
+    private LocalDate installationDate;
+
+
     private String name;
     private String description;
     private String type;
@@ -60,7 +66,29 @@ public class Service extends Person {
                 ", services=" + services +
                 '}';
     }
+    public ServiceType getServiceType() {
+        return serviceType;
+    }
 
+    public void setServiceType(ServiceType serviceType) {
+        this.serviceType = serviceType;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public LocalDate getInstallationDate() {
+        return installationDate;
+    }
+
+    public void setInstallationDate(LocalDate installationDate) {
+        this.installationDate = installationDate;
+    }
     public Long getService_id() {
         return service_id;
     }

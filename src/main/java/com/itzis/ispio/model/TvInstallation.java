@@ -4,12 +4,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.text.DateFormat;
+import java.time.LocalDate;
 import java.util.Objects;
 
-public class TvInstalation extends TvService {
+public class TvInstallation extends TvService {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long tvInstalation_id;
+    private Long tvInstallation_id;
     private String name;
     private String description;
     private String type;
@@ -20,19 +21,19 @@ public class TvInstalation extends TvService {
     private String installTec;
     private Long splitters;
     private Long tacs;
-    private Long instalationCost;
+    private Long installationCost;
     private Long extracoaxcable;
-    private DateFormat instalationDate;
-
+    private LocalDate tvInstCreated;
+    private LocalDate tvInstExecuted;
     private Long subtotal;
     private Long total;
     boolean installationState = true;
 
-    public TvInstalation() {
+    public TvInstallation() {
     }
 
-    public TvInstalation(Long tvInstalation_id, String name, String description, String type, String onumodel, String miniNode, String extraamplifier, String onumac, String installTec, Long splitters, Long tacs, Long instalationCost, Long extracoaxcable, DateFormat instalationDate, Long subtotal, Long total, boolean installationState) {
-        this.tvInstalation_id = tvInstalation_id;
+    public TvInstallation(Long tvInstalation_id, String name, String description, String type, String onumodel, String miniNode, String extraamplifier, String onumac, String installTec, Long splitters, Long tacs, Long instalationCost, Long extracoaxcable,  Long subtotal, Long total, LocalDate tvInstCreated, LocalDate tvInstExecuted, boolean installationState) {
+        this.tvInstallation_id = tvInstalation_id;
         this.name = name;
         this.description = description;
         this.type = type;
@@ -43,11 +44,12 @@ public class TvInstalation extends TvService {
         this.installTec = installTec;
         this.splitters = splitters;
         this.tacs = tacs;
-        this.instalationCost = instalationCost;
+        this.installationCost = instalationCost;
         this.extracoaxcable = extracoaxcable;
-        this.instalationDate = instalationDate;
         this.subtotal = subtotal;
         this.total = total;
+        this.tvInstCreated = tvInstCreated;
+        this.tvInstExecuted = tvInstExecuted;
     }
 
     @Override
@@ -55,19 +57,19 @@ public class TvInstalation extends TvService {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-        TvInstalation that = (TvInstalation) o;
-        return Objects.equals(tvInstalation_id, that.tvInstalation_id);
+        TvInstallation that = (TvInstallation) o;
+        return Objects.equals(tvInstallation_id, that.tvInstallation_id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), tvInstalation_id);
+        return Objects.hash(super.hashCode(), tvInstallation_id);
     }
 
     @Override
     public String toString() {
         return "TvInstalation{" +
-                "tvInstalation_id=" + tvInstalation_id +
+                "tvInstalation_id=" + tvInstallation_id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", type='" + type + '\'' +
@@ -78,21 +80,20 @@ public class TvInstalation extends TvService {
                 ", installTec='" + installTec + '\'' +
                 ", splitters=" + splitters +
                 ", tacs=" + tacs +
-                ", instalationCost=" + instalationCost +
+                ", instalationCost=" + installationCost +
                 ", extracoaxcable=" + extracoaxcable +
-                ", instalationDate=" + instalationDate +
                 ", subtotal=" + subtotal +
                 ", total=" + total +
                 ", instalationState=" + installationState +
                 '}';
     }
 
-    public Long getTvInstalation_id() {
-        return tvInstalation_id;
+    public Long getTvInstallation_id() {
+        return tvInstallation_id;
     }
 
-    public void setTvInstalation_id(Long tvInstalation_id) {
-        this.tvInstalation_id = tvInstalation_id;
+    public void setTvInstallation_id(Long tvInstallation_id) {
+        this.tvInstallation_id = tvInstallation_id;
     }
 
     @Override
@@ -123,6 +124,22 @@ public class TvInstalation extends TvService {
     @Override
     public void setType(String type) {
         this.type = type;
+    }
+
+    public LocalDate getTvInstCreated() {
+        return tvInstCreated;
+    }
+
+    public void setTvInstCreated(LocalDate tvInstCreated) {
+        this.tvInstCreated = tvInstCreated;
+    }
+
+    public LocalDate getTvInstExecuted() {
+        return tvInstExecuted;
+    }
+
+    public void setTvInstExecuted(LocalDate tvInstExecuted) {
+        this.tvInstExecuted = tvInstExecuted;
     }
 
     public String getOnumodel() {
@@ -181,12 +198,12 @@ public class TvInstalation extends TvService {
         this.tacs = tacs;
     }
 
-    public Long getInstalationCost() {
-        return instalationCost;
+    public Long getInstallationCost() {
+        return installationCost;
     }
 
-    public void setInstalationCost(Long instalationCost) {
-        this.instalationCost = instalationCost;
+    public void setInstallationCost(Long installationCost) {
+        this.installationCost = installationCost;
     }
 
     public Long getExtracoaxcable() {
@@ -197,13 +214,6 @@ public class TvInstalation extends TvService {
         this.extracoaxcable = extracoaxcable;
     }
 
-    public DateFormat getInstalationDate() {
-        return instalationDate;
-    }
-
-    public void setInstalationDate(DateFormat instalationDate) {
-        this.instalationDate = instalationDate;
-    }
 
     public Long getSubtotal() {
         return subtotal;
