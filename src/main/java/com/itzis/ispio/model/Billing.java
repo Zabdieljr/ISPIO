@@ -4,6 +4,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -23,14 +25,16 @@ public class Billing extends Account {
     private Long quantity;
     private Long total;
     boolean billingState= true;
+    private LocalDate inTransactioDate;
+    private LocalDate outTransactionDate;
+    private LocalDateTime timeStamp;
     private DateFormat billingDate;
     final private Set<Billing> billings = new HashSet<>();
 
-    public Billing(Long account_id, String name, String description, String type, Long balance, DateFormat accountDate, Set<Account> accounts) {
-        super(account_id, name, description, type, balance, accountDate, accounts);
-    }
 
-    public Billing(Long account_id, String name, String description, String type, Long balance, DateFormat accountDate, Set<Account> accounts, Long billing_id, String name1, String description1, String type1, Long balance1, Long ammount, Long discount, Long interest, Long tax, Long quantity, Long total, DateFormat billingDate, Set<Billing> billings) {
+
+
+    public Billing(Long account_id, String name, String description, String type, Long balance, DateFormat accountDate, Set<Account> accounts, Long billing_id, String name1, String description1, String type1, Long balance1, Long ammount, Long discount, Long interest, Long tax, Long quantity, Long total, DateFormat billingDate, LocalDate inTransactioDate, LocalDate outTransactionDate, LocalDateTime timeStamp, Set<Billing> billings) {
         super(account_id, name, description, type, balance,accountDate, accounts);
         this.billing_id = billing_id;
         this.name = name1;
@@ -44,6 +48,9 @@ public class Billing extends Account {
         this.quantity = quantity;
         this.total = total;
         this.billingDate = billingDate;
+        this.inTransactioDate = inTransactioDate;
+        this.outTransactionDate = outTransactionDate;
+        this.timeStamp = timeStamp;
     }
 
     @Override
@@ -76,8 +83,35 @@ public class Billing extends Account {
                 ", total=" + total +
                 ", billingState=" + billingState +
                 ", billingDate=" + billingDate +
+                "inTransactioDate=" + inTransactioDate +
+                ", outTransactionDate=" + outTransactionDate +
+                ", timeStamp=" + timeStamp +
                 ", billings=" + billings +
                 '}';
+    }
+
+    public LocalDate getInTransactioDate() {
+        return inTransactioDate;
+    }
+
+    public void setInTransactioDate(LocalDate inTransactioDate) {
+        this.inTransactioDate = inTransactioDate;
+    }
+
+    public LocalDate getOutTransactionDate() {
+        return outTransactionDate;
+    }
+
+    public void setOutTransactionDate(LocalDate outTransactionDate) {
+        this.outTransactionDate = outTransactionDate;
+    }
+
+    public LocalDateTime getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(LocalDateTime timeStamp) {
+        this.timeStamp = timeStamp;
     }
 
     public Long getBilling_id() {
