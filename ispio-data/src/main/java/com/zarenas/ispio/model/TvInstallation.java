@@ -1,9 +1,8 @@
-package com.itzis.ispio.model;
+package com.zarenas.ispio.model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.text.DateFormat;
 import java.time.LocalDate;
 import java.util.Objects;
 

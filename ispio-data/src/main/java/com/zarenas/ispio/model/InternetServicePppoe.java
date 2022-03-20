@@ -1,4 +1,4 @@
-package com.itzis.ispio.model;
+package com.zarenas.ispio.model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

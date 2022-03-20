@@ -1,6 +1,4 @@
-package com.itzis.ispio.model;
-
-import java.time.LocalDate;
+package com.zarenas.ispio.model;
 
 public class ServiceType {
 
