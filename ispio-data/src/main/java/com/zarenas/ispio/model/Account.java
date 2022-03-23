@@ -1,14 +1,24 @@
 package com.zarenas.ispio.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.text.DateFormat;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-
-public class Account extends Person {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@MappedSuperclass
+public class Account extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long account_id;
@@ -18,9 +28,9 @@ public class Account extends Person {
     private Long balance;
     boolean accountState=true;
     private DateFormat accountDate;
-    final private Set<Account> accounts = new HashSet<>();
 
-    public Account(Long account_id, String name, String description, String type, Long balance, DateFormat accountDate, Set<Account> accounts) {
+    public Account(Long super_id,Long account_id, String name, String description, String type, Long balance, DateFormat accountDate) {
+        super(super_id);
         this.account_id = account_id;
         this.name = name;
         this.description = description;

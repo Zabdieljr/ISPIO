@@ -1,15 +1,23 @@
 package com.zarenas.ispio.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.io.Serializable;
+import javax.persistence.MappedSuperclass;
 import java.text.DateFormat;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
-public class Person implements Serializable {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@MappedSuperclass
+public class Person extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long person_id;
@@ -19,12 +27,11 @@ public class Person implements Serializable {
     private String lastName;
     private String legalID;
     private DateFormat dobirth;
-    boolean  personState = true;
-    final private Set<Person> persons = new HashSet<>();
+    boolean personState = true;
 
-    public Person() {
-    }
-    public Person(Long person_id, String firstName, String secondName, String maidenName, String lastName, String legalID, DateFormat dobirth) {
+
+    public Person(Long super_id, Long person_id, String firstName, String secondName, String maidenName, String lastName, String legalID, DateFormat dobirth) {
+        super(super_id);
         this.person_id = person_id;
         this.firstName = firstName;
         this.secondName = secondName;

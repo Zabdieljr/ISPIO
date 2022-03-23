@@ -34,8 +34,7 @@ public class Billing extends Account {
 
 
 
-    public Billing(Long account_id, String name, String description, String type, Long balance, DateFormat accountDate, Set<Account> accounts, Long billing_id, String name1, String description1, String type1, Long balance1, Long ammount, Long discount, Long interest, Long tax, Long quantity, Long total, DateFormat billingDate, LocalDate inTransactioDate, LocalDate outTransactionDate, LocalDateTime timeStamp, Set<Billing> billings) {
-        super(account_id, name, description, type, balance,accountDate, accounts);
+    public Billing(Long account_id, String name, String description, String type, Long balance, DateFormat accountDate, Set<Account> accounts, Long billing_id, String name1, String description1, String type1, Long balance1, Long ammount, Long discount, Long interest, Long tax, Long quantity, Long total, DateFormat billingDate, LocalDate inTransactioDate, LocalDate outTransactionDate, LocalDateTime timeStamp) {
         this.billing_id = billing_id;
         this.name = name1;
         this.description = description1;

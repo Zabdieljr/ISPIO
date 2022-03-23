@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-public class Service extends Person {
+public class Service extends Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long service_id;

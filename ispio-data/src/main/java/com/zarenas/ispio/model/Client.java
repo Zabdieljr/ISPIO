@@ -1,13 +1,23 @@
 package com.zarenas.ispio.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-
-public class Client extends Person {
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@MappedSuperclass
+public class Client extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long client_id;
@@ -25,12 +35,10 @@ public class Client extends Person {
 
     boolean thirPartyService= false;
     private String thirdProviderName;
-    final private Set<Client> clients = new HashSet<>();
 
-    public Client() {
-    }
 
-    public Client(Long client_id, String clientType, String mainProviderName, String phone, String phone2, String email, String street, String sector, String city, String state, String estratus, String thirdProviderName) {
+    public Client(Long super_id,Long client_id, String clientType, String mainProviderName, String phone, String phone2, String email, String street, String sector, String city, String state, String estratus, String thirdProviderName) {
+        super(super_id);
         this.client_id = client_id;
         this.clientType = clientType;
         this.mainProviderName = mainProviderName;
@@ -76,7 +84,6 @@ public class Client extends Person {
                 ", estratus='" + estratus + '\'' +
                 ", thirPartyService=" + thirPartyService +
                 ", thirdProviderName='" + thirdProviderName + '\'' +
-                ", clients=" + clients +
                 '}';
     }
 
@@ -192,7 +199,4 @@ public class Client extends Person {
         this.thirdProviderName = thirdProviderName;
     }
 
-    public Set<Client> getClients() {
-        return clients;
-    }
 }
