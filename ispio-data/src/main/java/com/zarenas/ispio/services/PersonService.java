@@ -2,17 +2,11 @@ package com.zarenas.ispio.services;
 
 import com.zarenas.ispio.model.Person;
 
-import java.util.Set;
+import java.util.List;
 
-public interface PersonService {
-    Person findByIdLegalID(String legal_ID);
-
+public interface PersonService extends CrudService<Person, Long> {
     Person findByLastName(String lastName);
 
-    Person findById(Long person_id);
-
-    Person save(Person person);
-
-    Set<Person> findAll();
+    List<Person> findAllByLastNameLike(String lastName);
 
 }

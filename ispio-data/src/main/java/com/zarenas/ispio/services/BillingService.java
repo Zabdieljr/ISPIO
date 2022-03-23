@@ -1,15 +1,17 @@
 package com.zarenas.ispio.services;
 
 import com.zarenas.ispio.model.Billing;
+import com.zarenas.ispio.model.Client;
 
-import java.util.Set;
+import java.util.List;
 
-public interface BillingService {
+public interface BillingService extends CrudService<Client, Long> {
 
-    Billing findById(Long billing_id);
+
+    Billing findByBillingId(Long billing_id);
+
+    List<Billing> findAllByLastNameLike(String lastName);
+
 
     Billing save(Billing billing);
-
-    Set<Billing> findAll();
-
 }
