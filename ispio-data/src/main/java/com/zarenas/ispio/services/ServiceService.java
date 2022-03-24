@@ -7,12 +7,12 @@ import com.zarenas.ispio.model.Service;
 import java.util.List;
 import java.util.Set;
 
-public interface ServiceService extends CrudService<Client, Long> {
+public interface ServiceService extends CrudService<Service, Long> {
 
 
-    Client findByLastName(String lastName);
+    Service findByLastName(String lastName);
 
-    List<Client> findAllByLastNameLike(String lastName);
+    List<Client> findAllByLastNameLike(String name);
 
     Service findById(Long service_id);
 

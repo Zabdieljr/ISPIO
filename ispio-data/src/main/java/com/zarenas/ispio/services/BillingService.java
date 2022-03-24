@@ -5,7 +5,7 @@ import com.zarenas.ispio.model.Client;
 
 import java.util.List;
 
-public interface BillingService extends CrudService<Client, Long> {
+public interface BillingService extends CrudService<Billing, Long> {
 
 
     Billing findByBillingId(Long billing_id);
